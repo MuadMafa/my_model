@@ -18,7 +18,7 @@ from PIL import Image, ImageOps
 
 import numpy as np
 
-def import_and_predict(image_ data, model)
+def import_and_predict(image_data, model)
 size = (150,150)
 image = ImageOps.fit(image data, size, Image.ANTIALIAS)
 img = np.asarray(image)
