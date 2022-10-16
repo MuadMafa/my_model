@@ -28,7 +28,7 @@ def import_and_predict(image_data, model):
 
 if file==None:
     st.text("Please Upload a file")
- else:
+else:
     image = Image.open(file)
     st.image(image, use_column_width=True)
     predictions = import_and_predict(image, model)
