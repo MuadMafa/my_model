@@ -5,12 +5,12 @@ from tensorflow import keras
 st.set_option('deprecation.showfileUploaderEncoding’', False)
 @st.cache(allow_output_mutation=True)
 def load_model():
-    model = tf.keras.models.load_model(‘my_model.h5‘)
+    model = tf.keras.models.load_model('my_model.h5')
     return model
 
 model=load_model()
 st.write("""Welcome to Flower Classification""")
-file = st.file_uploader("Please upload a Flower Image" , type=["jpg", “png”])
+file = st.file_uploader("Please upload a Flower Image" , type=["jpg", "png"])
 
 
 import cv2
@@ -32,6 +32,6 @@ if file==None:
         image = Image.open(file)
         st.image(image, use_column_width=True)
         predictions = import_and_predict(image, model)
-        class_names = ['daisy’, ‘dandelion’, ‘roses’ , ‘sunflowers’, ‘tulips']
-        string = “The Flower in the Image is most likely is : “ + class_names[np.argmax(predictions) ]
+        class_names = ['daisy', 'dandelion', 'roses' , 'sunflowers', 'tulips']
+        string = "The Flower in the Image is most likely is : " + class_names[np.argmax(predictions) ]
         st.success(string)
