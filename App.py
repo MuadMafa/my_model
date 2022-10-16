@@ -5,9 +5,9 @@ from tensorflow import keras
 st.set_option('deprecation.showfileUploaderEncoding’', False)
 @st.cache(allow_output_mutation=True)
 def load_model():
-model = tf.keras.models.load_model(‘my_model.h5‘)
+    model = tf.keras.models.load_model(‘my_model.h5‘)
+    return model
 
-return model
 model=load_model()
 st.write("""Welcome to Flower Classification""")
 file = st.file_uploader("Please upload a Flower Image" , type=["jpg", “png”])
